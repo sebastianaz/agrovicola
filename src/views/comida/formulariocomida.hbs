@@ -1,0 +1,105 @@
+
+<a href="/registroscomida" class="btn btn-info btn-block"> Lista de registros</a>
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-md-6 mx-auto my-4">
+            <div class="card tex-center">
+                <div class="card-header">
+                    <h2> Comida Ponedoras</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/comidaponedora" method="POST">
+                        <div class="form-group">
+                            <div class="form-control" style="font-size:large;font-weight:900;">Kg comida sobrante <em>de AYER</em></div>
+                            <div class="form-control input-group input-group-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Kilogramos (00.00)</span>
+                                </div>
+                                <input type="hidden" name="ponedora_engorde" value="ponedora">
+                                <input name="masa_sobrante" type="number" min="0.0" step="0.01" class="form-control text-center" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="form-control" style="font-size:large;font-weight:900;">Kg comida <em>de HOY</em></div>
+                            <div class="form-control input-group input-group-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Kilogramos (00.00)</span>
+                                </div>
+                                <input type="number" min="0.0" step="0.01" name="masa_agregada" class="form-control text-center" required>
+                            </div>
+                        </div>
+                        <br>
+
+<ul class="nav nav-tabs  ">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle flex-column flex-sm-row" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Suplementos</a>
+<div class="dropdown-menu">
+    <a class="dropdown-item">Suero (Kg)  <input type="number" name="suero" min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+    <a class="dropdown-item">Maiz (Kg)   <input type="number" name="maiz" min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+    <a class="dropdown-item">Forraje (Kg)<input type="number" name="forraje" min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+
+</div>
+</li>
+</ul>
+<br>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block">guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="col-md-6 mx-auto my-4">
+            <div class="card tex-center">
+                <div class="card-header">
+                    <h2> Comida Pollos Engorde</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/comidaengorde" method="POST">
+                        <div class="form-group">
+                            <div class="form-control" style="font-size:large;font-weight:900;">Kg comida sobrante <em>de AYER</em></div>
+                            <div class="form-control input-group input-group-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Kilogramos (00.00)</span>
+                                </div>
+                                <input type="hidden" name="ponedora_engorde" value="engorde" >
+                                <input type="number" name="masa_sobrante" min="0.0" step="0.01" aria-label="First name" class="form-control text-center" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <div class="form-control" style="font-size:large;font-weight:900;">Kg comida <em>de HOY</em></div>
+                            <div class="form-control input-group input-group-lg">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Kilogramos (00.00)</span>
+                                </div>
+                                <input type="number" name="masa_agregada" min="0.0" step="0.01" aria-label="First name"class="form-control text-center" required>
+                            </div>
+                        </div>
+                        <br>
+<ul class="nav nav-tabs  ">
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle flex-column flex-sm-row" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Suplementos</a>
+<div class="dropdown-menu">
+    <a class="dropdown-item">Suero (Kg)  <input type="number" name="suero" min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+    <a class="dropdown-item">Maiz (Kg)   <input type="number" name="maiz" min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+    <a class="dropdown-item">Forraje (Kg)<input type="number" name="forraje" min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+
+</div>
+</li>
+</ul>
+<br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block">guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="/registroscomida" class="btn btn-info btn-block"> Lista de registros</a>

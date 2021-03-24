@@ -1,0 +1,44 @@
+<h1> lista de registros de comida</h1>
+
+<div class="container-flex">
+    <div class="row">
+        <div class="col-sm-6">
+        {{#each comidasEngorde}}
+            <div class="card my-2">
+                <div class="card-header">
+                    <h2 class="cart-title d-flex justify-content-between alingn-items-center">
+                        pollos de {{ponedora_engorde}} <a href="/delete/engorde/{{_id}}"> <i class="fas fa-edit"></i></a></h2>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        <li><u>Masa Agregada</u> {{masa_agregada}} Kg</li>
+                        <li><u>Masa Sobrante</u> {{masa_sobrante}} Kg</li>
+                        <li><u>Suple. M/S/F</u> {{suplementos}}</li>
+                        <li><u>fecha y hora</u> {{date}}</li>
+                    </ol>
+                </div>
+            </div>
+                    {{/each}}
+        </div>
+
+        <div class="col-sm-6">
+            {{#each comidasPonedoras}}
+                <div class="card my-2">
+                    <div class="card-header">
+                        <h2 class="cart-title d-flex justify-content-between alingn-items-center">
+                            Pollitas {{ponedora_engorde}}
+                            <a href="/delete/ponedora/{{_id}}"> <i class="fas fa-edit"></i></a></h2>
+                    </div>
+                    <div class="card-body">
+                    <ol>
+                        <li><u>Masa Agregada</u> {{masa_agregada}} Kg</li>
+                        <li><u>Masa Sobrante</u> {{masa_sobrante}} Kg</li>
+                        <li><u>Suple. M/S/F</u> {{suplementos}}</li>
+                        <li><u>fecha y hora</u> {{date}}</li>
+                    </ol>
+                    </div>
+                </div>
+            {{/each}}
+            </div>
+    </div>
+</div>

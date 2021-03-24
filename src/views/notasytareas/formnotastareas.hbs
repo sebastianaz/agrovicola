@@ -1,0 +1,72 @@
+<div class="container-fluid">
+    <div class="row ">
+        <div class="col-md-6 mx-auto my-4">
+            <div class="card text-center  text-white bg-primary">
+                <div class="card-header">
+                    <h2> NOTAS </h2>
+                </div>
+                <div class="card-body">
+                    <form action="/createnota" method="POST">
+                        <div class="card-body">
+                            <h4 class="card-title">Titulo de la Notas</h4>
+                            <div class="form-group">
+                                <input type="hidden" name="notas" value="notas">
+                                <input type="text" placeholder="Titulo"  name="titulo" class="form-control bg-secondary notasForm" required>
+                            </div>
+                            <p class="card-text">Contenido de la Nota</p>
+                            <div class="form-group">
+                                <textarea name="description" id="" cols="25" rows="3" placeholder="Descripcion" class="form-control  bg-secondary notasForm" required></textarea>
+                            </div>
+                        </div>
+                        <p class="card-text">Fecha de Creacion</p>
+                        <input type="text" name="fecha" id="f_date_b" style="font-size:large;" required> 
+                        <button type="reset" id="f_trigger_b"><i class="far fa-calendar-alt"></i></button>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-warning">
+                                <a class="btn btn-warning btn-block">guardar</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <!-- =====================================================-->
+        <div class="col-md-6 mx-auto my-4">
+            <div class="card text-center  text-white bg-info">
+                <div class="card-header">
+                    <h2> TAREAS </h2>
+                </div>
+                <div class="card-body">
+                    <form action="/createtarea" method="POST">
+                        <div class="card-body">
+                            <h4 class="card-title">Titulo de la Tarea</h4>
+                            <div class="form-group">
+                                <input type="hidden" name="tareas" value="tarea" class="form-control">
+                                <input type="text" name="titulo" placeholder="Titulo" class="form-control bg-secondary notasForm" required>
+                            </div>
+                            <p class="card-text">Contenido de la Tarea</p>
+                            <div class="form-group">
+                                <textarea name="description" id="" cols="25" rows="3" placeholder="Descripcion" class="form-control  bg-secondary notasForm" required></textarea>
+                            </div>
+                        </div>
+                        <p class="card-text">Fecha de ejecucion</p>
+                        <input type="text" name="datetask" id="f__date_task" style="font-size:large;" required> 
+                        <button type="reset" id="f_trigger_task"><i class="fas fa-calendar-alt"></i></button>
+                        <br>
+                        <br>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-block btn-warning">
+                                <a  class="btn btn-warning btn-block">guardar</a>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/notastareasJavascript.js"></script>

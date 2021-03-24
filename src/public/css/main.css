@@ -1,0 +1,64 @@
+/*
+#00af91  40%
+#007965  20%
+#f58634  10%
+#fff891 5%
+*/
+body{  
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #02060c, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #02060c, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: 150%;
+    font-family: 'Caveat', cursive;
+}
+h1{ 
+    font-size: xx-large;
+    font-family: 'Fredoka One', cursive;
+}
+nav{border-radius: 20px;
+    font-size: large;
+    font-family: 'Fredoka One', cursive;
+}
+img{
+    border-radius: 20px;
+}
+a{
+    font-family: 'Fredoka One', cursive 
+}
+.felizgallinafooter{
+    border:10px solid #fff891;
+    border-radius: 20px;
+    max-width:100%
+}
+.footer-image{
+    display: flex;
+    justify-content: space-around;
+}
+.footer-container{
+    background-color: #007965;
+}
+.img-footer{
+    width:25%;
+    height:25%;
+    border:5px solid #fff891;
+    border-radius: 250px;
+}
+.card{
+    border:5px solid #fff891;
+    border-radius: 20px;
+}
+.container{
+    border-radius: 20px;
+}
+
+
+.notasForm{
+    font-family: 'Caveat';
+    font-size: large;
+    color: #02060c;
+    border-radius: 20px;
+}
+.cardnotatarea{
+    width: 300px;
+    height: 300px;
+}

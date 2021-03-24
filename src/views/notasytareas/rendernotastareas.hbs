@@ -1,0 +1,67 @@
+
+
+<h1 class="my-2 text-center"> Aqui renderiza Notas y tareas</h1>
+
+<a href="/formnotasytareas" class="btn btn-success btn-block"> Formulario de Notas y tareas</a>
+<div class="container" >
+    <div class="row" >
+        <!--   ===============================================    -->
+        {{#each allTareas}}
+        <div class="col-md-4 mx-auto" style="display: flex;justify-content: center;">
+            <div class="card my-2 text-dark bg-warning mb-3 cardnotatarea" style=" " >
+                <div class="card-body">
+                    <h4 class="card-title">{{titulo}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Tarjeta de Tarea</h6>
+                    
+                    <textarea name="" id="" cols="20" rows="2">{{description}}</textarea>
+                                        
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="{{datetask}}" >
+                        <label class="form-check-label" for="{{datetask}}">
+                        {{datetask}} /{{terminada}}
+                        </label>
+                    </div>
+
+                    <a href="/tarea/delete/{{_id}}" class="card-link">Eliminar</a>
+                    <a href="/tarea/actualizar/{{_id}}" class="card-link">Actualizar</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        {{#each allNotas}}
+        <div class="col-md-4 mx-auto" style="display: flex;justify-content: center;">
+            <div class="card my-2 cardnotatarea" >
+                <div class="card-body">
+                    <h4 class="card-title">{{titulo}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Tarjeta de Nota</h6>
+                    <textarea name="" id="" cols="20" rows="2">{{description}}</textarea>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="{{fecha}}" checked>
+                        <label class="form-check-label" for="{{fecha}}">
+                        {{fecha}}
+                        </label>
+                    </div>
+                    <a onclick="myFunctionDelete(){alert("hola")}" class="card-link" href="/nota/delete/{{_id}}">Eliminar</a>
+                    <a  class="card-link">Actualizar</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+
+
+<a href="/formnotasytareas" class="btn btn-success btn-block"> Formulario de Notas y tareas</a>
+
+{{#each allNotas}}
+    <input class="misnotas" type="hidden" name="{{titulo}}" value="{{description}}" id="{{fecha}}" >
+{{/each}}
+
+{{#each allTareas}}
+    <input class="mistareas" type="hidden" name="{{titulo}}" value="{{description}}" id="{{datetask}}/{{terminada}}" >
+{{/each}}
+
+
+<script type="text/javascript" src="js/dinamicaNotasyTareas.js" ></script>
