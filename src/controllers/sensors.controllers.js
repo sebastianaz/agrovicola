@@ -3,10 +3,10 @@ const mqttHandler = require('./mqtt.controllers')
 const dataAves    = require('../models/sensors') 
 
 
-//var engordeMqttClient   = new mqttHandler('mqtt://m16.cloudmqtt.com','caezlyyt','UT_k9rid7tph',16594)
-//var ponedorasMqttClient = new mqttHandler('mqtt://m24.cloudmqtt.com','wbyeyecs','JY97cd5islf0',17403);
-//ponedorasMqttClient.connect();
-//engordeMqttClient.connect();
+var engordeMqttClient   = new mqttHandler('mqtt://m16.cloudmqtt.com','caezlyyt','UT_k9rid7tph',16594)
+var ponedorasMqttClient = new mqttHandler('mqtt://m24.cloudmqtt.com','wbyeyecs','JY97cd5islf0',17403);
+ponedorasMqttClient.connect();
+engordeMqttClient.connect();
 
 //1
 sensorsCtrl.renderSensorsPonedoras = async(req,res) =>{
