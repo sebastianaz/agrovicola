@@ -8,10 +8,10 @@ const { createComida,
         deletePonedora,
         graficosComidaAves
         }= require('../controllers/comida.controllers')
-
+const {isAuthenticated} = require('../helpers/auth')
 //  control de comida
-comidaRouter.get('/registroscomida',renderComidas)
-comidaRouter.get('/comida',formularioComida)
+comidaRouter.get('/registroscomida',isAuthenticated,renderComidas)
+comidaRouter.get('/comida',isAuthenticated,formularioComida)
 comidaRouter.post('/comidaponedora',createComida)
 comidaRouter.post('/comidaengorde',createComida)
 
@@ -20,6 +20,6 @@ comidaRouter.get('/delete/engorde/:id',deleteEngorde);
 comidaRouter.get('/delete/ponedora/:id',deletePonedora);
 
 // 3: graficos y analisis de datos Comida Aves
-comidaRouter.get('/graficoscomida',graficosComidaAves);
+comidaRouter.get('/graficoscomida',isAuthenticated,graficosComidaAves);
 
 module.exports = comidaRouter

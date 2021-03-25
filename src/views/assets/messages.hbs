@@ -1,0 +1,32 @@
+{{#if success_msg}}
+    <div class="alert alert-info alert-dismissible fade show text-center" role="alert">
+        {{success_msg}}
+    
+    <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"><i class="fas fa-window-close"></i></span>
+    </button>
+
+    </div>
+{{/if}}
+
+{{#if danger_msg}}
+    <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        {{danger_msg}}
+    
+    <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"><i class="fas fa-window-close"></i></span>
+    </button>
+
+    </div>
+{{/if}}
+
+{{#if error_msg}}
+    <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+        {{error_msg}}
+    
+    <button  type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"><i class="fas fa-window-close"></i></span>
+    </button>
+
+    </div>
+{{/if}}

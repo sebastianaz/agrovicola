@@ -8,22 +8,30 @@
         <!--   ===============================================    -->
         {{#each allTareas}}
         <div class="col-md-4 mx-auto" style="display: flex;justify-content: center;">
-            <div class="card my-2 text-dark bg-warning mb-3 cardnotatarea" style=" " >
-                <div class="card-body">
+            <div class="card my-2 text-dark bg-warning mb-3 cardnotatarea" >
+                <div class="card-body mb-0">
                     <h4 class="card-title">{{titulo}}</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Tarjeta de Tarea</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Tarjeta de Tarea / {{terminada}}</h6>
                     
-                    <textarea name="" id="" cols="20" rows="2">{{description}}</textarea>
+                    <textarea name="" id="" cols="23" rows="4">{{description}}</textarea>
                                         
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="{{datetask}}" >
                         <label class="form-check-label" for="{{datetask}}">
-                        {{datetask}} /{{terminada}}
+                        {{datetask}} 
                         </label>
                     </div>
-
-                    <a href="/tarea/delete/{{_id}}" class="card-link">Eliminar</a>
+                    <div style="display:flex;justify-content:space-around">
+                    <button class="btn">
+                    <a class="card-link" href="/tarea/delete/{{_id}}">Eliminar</a>
+                    </button>
+                    <!--<form action="/actualizar" method="POST" >-->
+                    <input type="hidden" name="id" value="{{_id}}">
+                    <button class="btn" type="submit">
                     <a href="/tarea/actualizar/{{_id}}" class="card-link">Actualizar</a>
+                    </button>
+                    <!--</form>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,15 +43,24 @@
                 <div class="card-body">
                     <h4 class="card-title">{{titulo}}</h4>
                     <h6 class="card-subtitle mb-2 text-muted">Tarjeta de Nota</h6>
-                    <textarea name="" id="" cols="20" rows="2">{{description}}</textarea>
+                    <textarea name="" id="" cols="23" rows="4">{{description}}</textarea>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="{{fecha}}" checked>
                         <label class="form-check-label" for="{{fecha}}">
                         {{fecha}}
                         </label>
                     </div>
+                    <div style="display:flex;justify-content:space-around">
+                    <button class="btn">
                     <a onclick="myFunctionDelete(){alert("hola")}" class="card-link" href="/nota/delete/{{_id}}">Eliminar</a>
-                    <a  class="card-link">Actualizar</a>
+                    </button>
+                    <form action="/actualizar" method="POST" >
+                    <input type="hidden" name="id" value="{{_id}}">
+                    <button class="btn" type="submit">
+                    <a class="card-link">Actualizar</a>
+                    </button>
+                    </form>
+                    </div>
                 </div>
             </div>
         </div>

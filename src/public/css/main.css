@@ -5,16 +5,17 @@
 #fff891 5%
 */
 body{  
-    background: #43C6AC;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #02060c, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #02060c, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #6866f3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #6f64ac, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #6f64ac, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-size: 150%;
-    font-family: 'Caveat', cursive;
+    font-family: 'Rubik', sans-serif;
 }
 h1{ 
     font-size: xx-large;
     font-family: 'Fredoka One', cursive;
 }
+
 nav{border-radius: 20px;
     font-size: large;
     font-family: 'Fredoka One', cursive;
@@ -23,7 +24,11 @@ img{
     border-radius: 20px;
 }
 a{
-    font-family: 'Fredoka One', cursive 
+    font-family: 'Fredoka One', cursive;
+}
+p{
+    text-align: justify;
+    color: black;
 }
 .felizgallinafooter{
     border:10px solid #fff891;
@@ -35,17 +40,22 @@ a{
     justify-content: space-around;
 }
 .footer-container{
-    background-color: #007965;
+    background: #6866f3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #6f64ac, #aeee72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #aeee72, #21c5a4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+
 .img-footer{
-    width:25%;
-    height:25%;
+    width:30%;
+    height:30%;
     border:5px solid #fff891;
     border-radius: 250px;
 }
 .card{
-    border:5px solid #fff891;
+    border:5px solid #fffddc;
     border-radius: 20px;
+    background-color: rgba(237, 240, 199, 0.932);
 }
 .container{
     border-radius: 20px;
@@ -61,4 +71,22 @@ a{
 .cardnotatarea{
     width: 300px;
     height: 300px;
+}
+
+.form-control{
+    font-size:x-large;
+}
+
+textarea{
+    color: rgb(4, 58, 105);
+    font-size:large;
+    box-sizing:border-box;
+}
+.logo{
+    width: 50%;
+}
+
+label{
+    font-size: medium;
+    color: rgb(0, 0, 0);
 }

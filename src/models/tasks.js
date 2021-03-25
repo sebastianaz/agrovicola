@@ -6,6 +6,7 @@ const newTask = new Schema({
     description :{type:String,required:true},
     datetask    :{type:String,required:true},
     terminada   :{type:Boolean,default:false},
+    user       :{type:String,required: true},
     date        :{ type: Date, default: Date.now }
 })
 

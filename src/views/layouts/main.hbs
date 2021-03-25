@@ -10,8 +10,9 @@
     <link rel="shortcut icon" href="favicon.png">
     <!-- CHART JS  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script> 
-    <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FONTS Rubik Caveat -->
     <link rel="preconnect" href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Fredoka+One&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
     <!-- FONT AWESOME-->
@@ -37,6 +38,8 @@
     {{>navigation}}
 
     <main class="container p-2">
+        {{>errors}}
+        {{>messages}}
         {{{body}}}
     </main>
     <section>

@@ -31,12 +31,18 @@
                         <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Proyectos</a>
                         <div class="dropdown-menu">
+                            {{#if user}}
                             <a class="dropdown-item a-proyectos" href="/pollitas"> 🐔 Pollitas Ponedoras</a>
                             <a class="dropdown-item a-proyectos" href="/gorditos"> 🐓 Pollos de Engorde</a>
                             <a class="dropdown-item a-proyectos" href="/comida"> 🌽 Registro de Comida</a>
                             <a class="dropdown-item a-proyectos" href="/agricultor"> 🌱 Registro Agricultor</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item a-proyectos" href="/notasytareas">📆 🔨 Notas y Tareas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item a-proyectos" href="/logout"> 🧩 Salir de la App</a>
+                            {{else}}
+                            <a class="dropdown-item a-proyectos" href="/signin">  🎶  Ingresa a tu Cuenta</a>
+                            {{/if}}
                         </div>
                     </li>
                 </ul>
