@@ -1,3 +1,13 @@
+const CHART_COLORS = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(201, 203, 207)'
+};
+
 let valoresPonedoras = document.getElementsByClassName('pollitasData');
 
 let humiValue  = [];
@@ -15,11 +25,11 @@ for(let i=0; i<valoresPonedoras.length;i++){
     var diasFecha = auxfecha.split(" ");
     var HTLG = auxdata.split("/");
 
-    todosFecha.unshift(diasFecha[4]);
-    humiValue.unshift(HTLG[0]);
-    tempValue.unshift(HTLG[1]);
-    lumeValue.unshift(HTLG[2]);
-    gassValue.unshift(HTLG[3]);
+    todosFecha.unshift(diasFecha[4].slice(-8,5));
+    humiValue.unshift(parseFloat(HTLG[0]));
+    tempValue.unshift(parseFloat(HTLG[1]));
+    lumeValue.unshift(parseFloat(HTLG[2]));
+    gassValue.unshift(parseFloat(HTLG[3]));
 };
 
 var chartHumedadPonedoras     = document.getElementById("myChartHumedad").getContext('2d');
@@ -29,40 +39,122 @@ var chartLuminosidadPonedoras = document.getElementById("myChartLuminosidad").ge
 
 let ponedorasHumedad = new Chart(chartHumedadPonedoras,{
     type: 'line',
-    data:{
-        labels : todosFecha,
-        datasets : [{
+    data: {
+        labels: todosFecha,
+        datasets: [{
             label: 'Humedad',
-            data : humiValue, 
-        }] 
-},
-options:{}
+            data: humiValue,
+            borderColor: CHART_COLORS.red,
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            pointStyle: 'circle' ,
+            pointRadius: 0,
+            fill : true
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Hora : minutos'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'humedad relativa (%)'
+                },
+                min: 55,
+                max: 67,
+                ticks: {
+                    // forces step size to be 50 units
+                    stepSize: 3
+                    }
+            }
+        }
+    }
 });
 
 
-let ponedorasTemperatura = new Chart(chartTemperaturaPonedoras,{
+let ponedorasTemperatura = new Chart(chartTemperaturaPonedoras, {
     type: 'line',
-    data:{
-        labels : todosFecha,
-        datasets : [{
+    data: {
+        labels: todosFecha,
+        datasets: [{
             label: 'Temperatura',
-            data : tempValue, 
-        }] 
-},
-options:{}
+            data: tempValue,
+            borderColor: CHART_COLORS.green,
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            pointStyle: 'circle',
+            pointRadius: 0,
+            fill: true
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Hora : minutos'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'grados (C)'
+                },
+                min: 20,
+                max: 40,
+                ticks: {
+                    // forces step size to be 50 units
+                    stepSize: 4
+                }
+            }
+        }
+    }
 });
 
-let ponedorasGases = new Chart(chartGasesPonedoras,{
+let ponedorasGases = new Chart(chartGasesPonedoras, {
     type: 'line',
-    data:{
-        labels : todosFecha,
-        datasets : [{
+    data: {
+        labels: todosFecha,
+        datasets: [{
             label: 'Gases',
-            data : gassValue, 
-        }] 
-},
-options:{}
+            data: gassValue,
+            borderColor: CHART_COLORS.purple,
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            pointStyle: 'circle',
+            pointRadius: 0,
+            fill: true
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Hora : minutos'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Concentracion (mg/L)'
+                },
+                min: 0,
+                max: 10,
+                ticks: {
+                    // forces step size to be 50 units
+                    stepSize: 2
+                }
+            }
+        }
+    }
 });
+
 
 let ponedorasLuminosidad = new Chart(chartLuminosidadPonedoras,{
     type: 'line',
@@ -70,8 +162,35 @@ let ponedorasLuminosidad = new Chart(chartLuminosidadPonedoras,{
         labels : todosFecha,
         datasets : [{
             label: 'Luminosidad',
-            data : lumeValue, 
+            data : lumeValue,
+            borderColor: CHART_COLORS.yellow,
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4,
+            pointStyle: 'circle' ,
+            pointRadius: 0,
+            fill : true 
         }] 
 },
-options:{}
+options:{
+    scales: {
+        x: {
+            title: {
+                display: true,
+                text: 'Hora : minutos'
+            }
+        },
+        y: {
+            title: {
+                display: true,
+                text: 'Iluminancia (Lux)'
+            },
+            min: 5,
+            max: 50,
+            ticks: {
+                // forces step size to be 50 units
+                stepSize: 5
+                }
+        }
+    }
+}
 });
