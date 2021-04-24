@@ -16,13 +16,10 @@ let lumeValue  = [];
 let gassValue  = [];
 let todosFecha = [];
 
-function horaColombia(fecha){
+function horaLocal(fecha){
     var toDate 
     toDate = new Date(fecha);
-    var actual 
-    actual = new Date(toDate.getTime() - (300*60000));
-    console.log(String(actual));
-    return String(actual);
+    return String(toDate);
 }
 
 for(let i=0; i<valoresEngorde.length;i++){
@@ -30,7 +27,7 @@ for(let i=0; i<valoresEngorde.length;i++){
     let auxfecha;
 
     auxdata = valoresEngorde[i].name;
-    auxfecha = horaColombia(valoresEngorde[i].id);
+    auxfecha = horaLocal(valoresEngorde[i].id)
     var diasFecha = auxfecha.split(" ");
     var HTLG = auxdata.split("/"); 
 
@@ -75,7 +72,7 @@ let EngordeHumedad = new Chart(chartHumedadEngorde, {
                     text: 'humedad relativa (%)'
                 },
                 min: 55,
-                max: 67,
+                max: 70,
                 ticks: {
                     // forces step size to be 50 units
                     stepSize: 3
