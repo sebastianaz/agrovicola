@@ -7,6 +7,14 @@ const CHART_COLORS = {
     purple: 'rgb(153, 102, 255)',
     grey: 'rgb(201, 203, 207)'
 };
+function horaColombia(fecha){
+    var toDate 
+    toDate = new Date(fecha);
+    var actual 
+    actual = new Date(toDate.getTime() - (300*60000));
+    console.log(String(actual));
+    return String(actual);
+}
 
 let valoresPonedoras = document.getElementsByClassName('pollitasData');
 
@@ -21,7 +29,7 @@ for(let i=0; i<valoresPonedoras.length;i++){
     let auxfecha;
 
     auxdata = valoresPonedoras[i].name;
-    auxfecha = valoresPonedoras[i].id;
+    auxfecha = horaColombia(valoresPonedoras[i].id;)
     var diasFecha = auxfecha.split(" ");
     var HTLG = auxdata.split("/");
 

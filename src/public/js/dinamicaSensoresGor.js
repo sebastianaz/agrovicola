@@ -16,12 +16,21 @@ let lumeValue  = [];
 let gassValue  = [];
 let todosFecha = [];
 
+function horaColombia(fecha){
+    var toDate 
+    toDate = new Date(fecha);
+    var actual 
+    actual = new Date(toDate.getTime() - (300*60000));
+    console.log(String(actual));
+    return String(actual);
+}
+
 for(let i=0; i<valoresEngorde.length;i++){
     let auxdata;
     let auxfecha;
 
     auxdata = valoresEngorde[i].name;
-    auxfecha = valoresEngorde[i].id;
+    auxfecha = horaColombia(valoresEngorde[i].id);
     var diasFecha = auxfecha.split(" ");
     var HTLG = auxdata.split("/"); 
 
