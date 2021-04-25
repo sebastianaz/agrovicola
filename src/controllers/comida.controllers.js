@@ -1,5 +1,6 @@
 const dataComida  = require('../models/comida_aves');
 const comidaCtrl = {};
+const {suplementacion, fecha}  =require('../helpers/comidas');
 
 //  1: renderiza los formularios para comida de aves
 comidaCtrl.formularioComida = (req,res)=>{
@@ -9,7 +10,12 @@ comidaCtrl.formularioComida = (req,res)=>{
 comidaCtrl.renderComidas = async(req,res)=>{
     const comidasPonedoras = await dataComida.find({ponedora_engorde:"ponedora"}).sort({$natural:-1}).limit(3).lean();
     const comidasEngorde = await dataComida.find({ponedora_engorde:"engorde"}).sort({$natural:-1}).limit(3).lean();
-    res.render('comida/registroscomida',{comidasPonedoras,comidasEngorde})
+    try{
+        suplementacion(comidasEngorde)
+        fecha(comidasEngorde)
+        res.render('comida/registroscomida',{comidasPonedoras,comidasEngorde})
+    }catch(er){console.log(er);}
+    
 }
 //  3: Recibe la Data de la comida de aves
 comidaCtrl.createComida = async(req,res)=>{//post
