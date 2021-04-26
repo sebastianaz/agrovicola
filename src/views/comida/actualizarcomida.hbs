@@ -9,13 +9,16 @@
         <div class="card-body">
             <form action="/editcomida/{{registroComida._id}}?_method=PUT" method="POST">
                 <input type="hidden" name="_method" value="PUT">
+                <br>
                 <!-- 2 -->
+                <h4><em style=" font-weight:bold; color: rgb(69, 2, 90);">Masa Agregada</em></h4>
                 <div class="form-group">
-                    <input type="text" name="masa_agregada" class="form-control" value="{{registroComida.masa_agregada}}" />
+                    <input type="number" name="masa_agregada" class="form-control" value="{{registroComida.masa_agregada}}" />
                 </div>
                 <!-- 2 -->
+                <h4><em style=" font-weight:bold; color: rgb(69, 2, 90);">Masa Sobrante</em></h4>
                 <div class="form-group">
-                    <input type="text" name="masa_sobrante" class="form-control" value="{{registroComida.masa_sobrante}}" />
+                    <input type="number" name="masa_sobrante" class="form-control" value="{{registroComida.masa_sobrante}}" />
                 </div>
                 <!-- 3 -->
                 <div class="form-group">
@@ -36,6 +39,8 @@
                     </ul>
                 </div>
                 <!-- 4 -->
+                <hr><br>
+                <h4><em style=" font-weight:bold; color: rgb(2, 59, 90);">Fecha y Hora</em></h4>
                 <div class="form-group">
                     <input type="text" name="date" class="form-control" value="{{registroComida.date}}" />
                 </div>

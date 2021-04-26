@@ -1,6 +1,6 @@
 const dataComida  = require('../models/comida_aves');
 const comidaCtrl = {};
-const {suplementacion, fecha, suplementacionArray}  =require('../helpers/comidas');
+const {suplementacion, fecha, suplementacionArray, fechaColombia}  =require('../helpers/comidas');
 
 
 //  1: renderiza los formularios para comida de aves
@@ -58,6 +58,7 @@ comidaCtrl.formularioActualizacionComida = async(req,res)=>{
     const registroComida = await dataComida.findById(_id).lean()
     try{
         suplementacionArray(registroComida);
+        fechaColombia(registroComida);
         res.render('comida/actualizarcomida',{registroComida})
     }catch(e){
         console.log(e);

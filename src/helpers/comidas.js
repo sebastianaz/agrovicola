@@ -21,8 +21,6 @@ objetoComida.suplementacionArray = (comida)=>{
     return comida
 }
 
-
-
 objetoComida.fecha = (comida)=>{
     for(var i=0; i< comida.length; i++){
         var fecha;
@@ -34,6 +32,15 @@ objetoComida.fecha = (comida)=>{
         comida[i].date = `${diaHora[1]}/${diaHora[2]} ${diaHora[0]}:${diaHora[4]}`
 
     }
+    return comida
+
+}
+
+objetoComida.fechaColombia = (comida)=>{
+    var fecha;
+    var auxFecha;
+    auxFecha = comida.date
+    fecha = new Date(auxFecha.getTime()-300*60000)
     return comida
 
 }
