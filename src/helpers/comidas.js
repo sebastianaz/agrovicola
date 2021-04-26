@@ -39,8 +39,9 @@ objetoComida.fecha = (comida)=>{
 objetoComida.fechaColombia = (comida)=>{
     var fecha;
     var auxFecha;
-    auxFecha = comida.date
-    fecha = new Date(auxFecha.getTime()-300*60000)
+    auxFecha = comida.date;
+    fecha = new Date(auxFecha.getTime()-300*60000);
+    comida.date = fecha;
     return comida
 
 }
