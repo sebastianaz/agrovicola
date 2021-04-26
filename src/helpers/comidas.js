@@ -10,6 +10,19 @@ objetoComida.suplementacion = (comida)=>{
     return comida
 }
 
+objetoComida.suplementacionArray = (comida)=>{
+    let suplementos = comida.suplementos;
+    let aux = Array.from(suplementos);
+    let maiz = aux[0] ; let suero = aux[1]; let forraje = aux[2]
+    comida.suero = suero;
+    comida.maiz = maiz;
+    comida.forraje = forraje;
+    console.log(comida);
+    return comida
+}
+
+
+
 objetoComida.fecha = (comida)=>{
     for(var i=0; i< comida.length; i++){
         var fecha;

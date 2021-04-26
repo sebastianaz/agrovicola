@@ -1,0 +1,51 @@
+
+
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3><em style=" font-weight:bold; color: rgb(69, 2, 90);">Editar Comida
+                    {{registroComida.ponedora_engorde}}</em></h3>
+        </div>
+        <div class="card-body">
+            <form action="/editcomida/{{registroComida._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                <!-- 2 -->
+                <div class="form-group">
+                    <input type="text" name="masa_agregada" class="form-control" value="{{registroComida.masa_agregada}}" />
+                </div>
+                <!-- 2 -->
+                <div class="form-group">
+                    <input type="text" name="masa_sobrante" class="form-control" value="{{registroComida.masa_sobrante}}" />
+                </div>
+                <!-- 3 -->
+                <div class="form-group">
+                    <ul class="nav nav-tabs  ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle flex-column flex-sm-row" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn"><em style=" font-weight:bold; color: rgb(69, 2, 90);">Suplementos</em></button></a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">Suero (Kg) 
+                                    <input  name="suero" value="{{registroComida.suero}}" type="number"  min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+                                <a class="dropdown-item">Maiz (Kg) 
+                                    <input  name="maiz" value="{{registroComida.maiz}}" type="number"  min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+                                <a class="dropdown-item">Forraje (Kg)
+                                    <input  name="forraje" value="{{registroComida.forraje}}" type="number"  min="0.0" step="0.01" aria-label="First name" class="form-control text-center"></a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 4 -->
+                <div class="form-group">
+                    <input type="text" name="date" class="form-control" value="{{registroComida.date}}" />
+                </div>
+                <!-- buton submit -->
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">guardar cambios</button>
+                </div>
+            </form>
+            <a href="/registroscomida" class="btn btn-info btn-block"> lista de registros</a>
+            <a href="/delete/{{registroComida._id}}" class="btn btn-danger btn-block"> eliminar registros</a>
+        </div>
+    </div>
+</div>

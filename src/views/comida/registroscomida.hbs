@@ -1,15 +1,18 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
-
 <h1> lista de registros de comida</h1>
 
 <div class="container-flex">
     <div class="row">
         {{#each comidasEngorde}}
         <div class="col-md-4">
-            <div  id="prueva" class="card my-2">
+            <div id="prueva" class="card my-2">
                 <div class="card-header">
                     <h2 class="cart-title d-flex justify-content-between alingn-items-center">
-                        pollos de {{ponedora_engorde}} <a href="/delete/engorde/{{_id}}"> <i class="fas fa-edit"></i></a></h2>
+                        <em style=" font-weight:bold; color: rgb(69, 2, 90);">Pollos de {{ponedora_engorde}}</em>
+                        <form action="/actualizacion" method="POST">
+                            <input name="_id" type="hidden" value="{{_id}}">
+                            <button type="submit" class="btn btn-info"> <i class="fas fa-edit fa-2x"></i></button>
+                        </form>
+                    </h2>
                 </div>
                 <div class="card-body">
                     <ol id="comidacard">
@@ -19,31 +22,35 @@
                         <li><u>fecha y hora</u> <br>{{date}}</li>
                     </ol>
                 </div>
-            </div>      
             </div>
+        </div>
         {{/each}}
 
 
         {{#each comidasPonedoras}}
-            <div class="col-sm-3">
-                <div class="card my-2">
-                    <div class="card-header">
-                        <h2 class="cart-title d-flex justify-content-between alingn-items-center">
-                            Pollitas {{ponedora_engorde}}
-                            <a href="/delete/ponedora/{{_id}}"> <i class="fas fa-edit"></i></a></h2>
-                    </div>
-                    <div class="card-body">
-                    <ol>
-                        <li><u>Masa Agregada</u> {{masa_agregada}} Kg</li>
-                        <li><u>Masa Sobrante</u> {{masa_sobrante}} Kg</li>
-                        <li><u>Suple. M/S/F</u> {{suplementos}}</li>
-                        <li><u>fecha y hora</u> {{date}}</li>
-                    </ol>
-                    </div>
+        <div class="col-md-4">
+            <div id="prueva" class="card my-2">
+                <div class="card-header">
+                    <h2  id="titulocomida"  class="cart-title d-flex justify-content-between alingn-items-center">
+                        <em  style=" font-weight:bold; color: rgb(69, 2, 90);">Pollos de {{ponedora_engorde}}</em>
+                        <form action="/actualizacion" method="POST">
+                            <input name="_id" type="hidden" value="{{_id}}">
+                            <button type="submit" class="btn btn-info"> <i class="fas fa-edit fa-2x"></i></button>
+                        </form>
+                    </h2>
                 </div>
-            {{/each}}
+                <div class="card-body">
+                    <ol id="comidacard">
+                        <li><u>Masa Agregada</u> <br>{{masa_agregada}} Kg</li>
+                        <li><u>Masa Sobrante</u> <br>{{masa_sobrante}} Kg</li>
+                        <li><u>Suple. M/S/F</u> <br>{{suplementos}}</li>
+                        <li><u>fecha y hora</u> <br>{{date}}</li>
+                    </ol>
+                </div>
             </div>
+        </div>
+        {{/each}}
     </div>
 </div>
 
-<script type="text/javascript" src="js/dinamicaComidaAves.js" ></script>
+<script type="text/javascript" src="js/dinamicaComidaAves.js"></script>
