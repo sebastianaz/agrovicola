@@ -44,6 +44,7 @@ comidaCtrl.deleteComida = async (req,res)=>{
             console.log(err);
         }else{console.log("delete Comp. : ", docs);}
     })
+    req.flash('success_msg','Registro comida ELIMINADO satisfactorimente')
     res.redirect("/registroscomida")
 }
 
