@@ -58,7 +58,6 @@ comidaCtrl.formularioActualizacionComida = async(req,res)=>{
     const registroComida = await dataComida.findById(_id).lean()
     try{
         suplementacionArray(registroComida);
-        fechaColombia(registroComida);
         res.render('comida/actualizarcomida',{registroComida})
     }catch(e){
         console.log(e);

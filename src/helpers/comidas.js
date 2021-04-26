@@ -24,25 +24,14 @@ objetoComida.suplementacionArray = (comida)=>{
 objetoComida.fecha = (comida)=>{
     for(var i=0; i< comida.length; i++){
         var fecha;
-        var auxFecha;//new Date( documento.fecha.getTime() -  ( documento.offset * 60000 ) );
+        var auxFecha;
         var diaHora;
         auxFecha = comida[i].date
         fecha = new Date(auxFecha.getTime()-300*60000)
         diaHora = String(fecha).split(" ")
         comida[i].date = `${diaHora[1]}/${diaHora[2]} ${diaHora[0]}:${diaHora[4]}`
-
     }
     return comida
-
 }
 
-objetoComida.fechaColombia = (comida)=>{
-    var fecha;
-    var auxFecha;
-    auxFecha = comida.date;
-    fecha = new Date(auxFecha.getTime()-300*60000);
-    comida.date = fecha;
-    return comida
-
-}
 module.exports = objetoComida;
