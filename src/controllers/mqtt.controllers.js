@@ -1,6 +1,9 @@
 const mqtt = require('mqtt');
 const sensors = require('../models/sensors')
 
+
+
+
 class MqttHandler {
     constructor(host,username,pass,port) {
         this.mqttClient = null;
@@ -10,6 +13,10 @@ class MqttHandler {
         this.clientId   = 'mqtt_node'+ Math.random().toString(16).substr(2, 8);
         this.port       = port;
     }
+    topicSalidaLuzAB = '/engorde/LUZAB';
+    controlTemp = '35.0';
+
+        // Sends a mqtt message to topic: mytopic
     
     connect() {
         //  1: Connect mqtt with credentials (in case of needed, otherwise we can omit 2nd param)
@@ -28,24 +35,32 @@ class MqttHandler {
         });
         //  4: mqtt subscriptions
         this.mqttClient.subscribe('+/#', {qos: 0});
-
+        
         //  5: When a message arrives, console.log it
         this.mqttClient.on('message', async function (topic, message) {
-            const dataAves = new sensors({varSensada:topic.toString(),valor:message.toString()})
-            console.log(topic.toString()+' : '+message.toString());
+            const dataAves = new sensors({ varSensada: topic.toString(), valor: message.toString() })
+            //console.log(topic.toString() + ' : ' + message.toString());
             await dataAves.save();
+            let auxdata;
+            auxdata = message.toString()
+            var HTLG = auxdata.split("/"); 
+            let tempValue = parseFloat(HTLG[1]);
+            //console.log(tempValue);
         });
-        //  6: when it need to be closed the connection 
+
+        //  7: when it need to be closed the connection 
         this.mqttClient.on('close', () => {
         console.log(`mqtt client disconnected`);
         });
+        
     }
-
-    // Sends a mqtt message to topic: mytopic
+      // 6: Sends a mqtt message to topic: mytopic
     sendMessage(message) {
-        this.mqttClient.publish('mytopic', message);
+    //console.log(this.topicSalidaLuzAB);
+    this.mqttClient.publish(this.topicSalidaLuzAB, message);
     }
 }
+
 
 //app.post("/send-mqtt", function(req, res) {
 //    mqttClient.sendMessage(req.body.message);
@@ -54,3 +69,10 @@ class MqttHandler {
 //https://medium.com/@cri.bh6/in-this-simple-example-im-going-to-show-how-to-write-a-very-simple-expressjs-api-that-uses-mqtt-to-57aa3ecdcd9e
 
 module.exports = MqttHandler;
+
+
+
+
+
+
+

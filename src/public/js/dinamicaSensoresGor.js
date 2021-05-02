@@ -67,12 +67,14 @@ let EngordeHumedad = new Chart(chartHumedadEngorde, {
                 }
             },
             y: {
+                type: 'linear',
+                position: 'right',
                 title: {
                     display: true,
                     text: 'humedad relativa (%)'
                 },
-                min: 55,
-                max: 70,
+                min: 40,
+                max: 85,
                 ticks: {
                     // forces step size to be 50 units
                     stepSize: 3
@@ -106,6 +108,8 @@ let EngordeTemperatura = new Chart(chartTemperaturaEngorde, {
                 }
             },
             y: {
+                type: 'linear',
+                position: 'right',
                 title: {
                     display: true,
                     text: 'grados (C)'
@@ -144,7 +148,9 @@ let EngordeGases = new Chart(chartGasesEngorde, {
                     text: 'Hora : minutos'
                 }
             },
-            y: {
+            y: {                
+                type: 'linear',
+                position: 'right',
                 title: {
                     display: true,
                     text: 'Concentracion (mg/L)'
@@ -184,6 +190,8 @@ options:{
             }
         },
         y: {
+            type: 'linear',
+            position: 'right',
             title: {
                 display: true,
                 text: 'Iluminancia (Lux)'
