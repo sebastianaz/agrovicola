@@ -156,10 +156,10 @@ let EngordeGases = new Chart(chartGasesEngorde, {
                     text: 'Concentracion (mg/L)'
                 },
                 min: 0,
-                max: 150,
+                max: 500,
                 ticks: {
                     // forces step size to be 50 units
-                    stepSize: 10
+                    stepSize: 25
                 }
             }
         }
