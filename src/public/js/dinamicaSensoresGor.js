@@ -114,11 +114,11 @@ let EngordeTemperatura = new Chart(chartTemperaturaEngorde, {
                     display: true,
                     text: 'grados (C)'
                 },
-                min: 20,
+                min: 30,
                 max: 40,
                 ticks: {
                     // forces step size to be 50 units
-                    stepSize: 4
+                    stepSize: 1
                 }
             }
         }
@@ -159,7 +159,7 @@ let EngordeGases = new Chart(chartGasesEngorde, {
                 max: 150,
                 ticks: {
                     // forces step size to be 50 units
-                    stepSize: 2
+                    stepSize: 10
                 }
             }
         }
@@ -197,10 +197,10 @@ options:{
                 text: 'Iluminancia (Lux)'
             },
             min: 5,
-            max: 50,
+            max: 120,
             ticks: {
                 // forces step size to be 50 units
-                stepSize: 5
+                stepSize: 15
                 }
         }
     }
