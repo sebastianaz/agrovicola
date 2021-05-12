@@ -11,14 +11,14 @@ engordeMqttClient.connect();
 //1
 sensorsCtrl.renderSensorsPonedoras = async(req,res) =>{
     
-    const ponedorasData = await dataAves.find({varSensada:"/ponedoras/HTLG"}).sort({$natural:-1}).limit(180).lean();
+    const ponedorasData = await dataAves.find({varSensada:"/ponedoras/HTLG"}).sort({$natural:-1}).limit(360).lean();
     const luzABData = await dataAves.find({varSensada:"/ponedoras/LUZAB"}).sort({$natural:-1}).limit(1).lean();
     res.render('ponedoras',{ponedorasData,luzABData})
 }
 //2
 sensorsCtrl.renderSensorsEngorde = async (req,res) =>{
     //engordeMqttClient.sendMessage('A')
-    const engordeData = await dataAves.find({varSensada:"/engorde/HTLG"}).sort({$natural:-1}).limit(180).lean();
+    const engordeData = await dataAves.find({varSensada:"/engorde/HTLG"}).sort({$natural:-1}).limit(360).lean();
     const luzABData = await dataAves.find({varSensada:"/engorde/LUZAB"}).sort({$natural:-1}).limit(1).lean();
     res.render('engorde',{engordeData,luzABData})
 }

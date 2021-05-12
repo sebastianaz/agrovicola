@@ -151,10 +151,10 @@ let ponedorasGases = new Chart(chartGasesPonedoras, {
                     text: 'Concentracion (mg/L)'
                 },
                 min: 0,
-                max: 10,
+                max: 50,
                 ticks: {
                     // forces step size to be 50 units
-                    stepSize: 2
+                    stepSize: 5
                 }
             }
         }
